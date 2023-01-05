@@ -9,7 +9,7 @@ use Yii;
  * teacher_remarks
  * supervisor_remarks
  */
-class TeacherDiary extends Attendance
+class TeacherDiary extends Diary
 {
     /**
      * {@inheritdoc}

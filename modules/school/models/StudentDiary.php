@@ -2,6 +2,7 @@
 
 namespace crudle\ext\school\models;
 
+use crudle\ext\school\enums\Status_Diary;
 use Yii;
 
 /**
@@ -9,7 +10,7 @@ use Yii;
  * sponsor_remarks
  * teacher_remarks
  */
-class StudentDiary extends Attendance
+class StudentDiary extends Diary
 {
     /**
      * {@inheritdoc}
@@ -41,5 +42,15 @@ class StudentDiary extends Attendance
             'sponsor_remarks' => Yii::t('app', 'Parent/Guardian remarks'),
             'teacher_remarks' => Yii::t('app', 'Teacher remarks'),
         ]);
+    }
+
+    public static function enums()
+    {
+        return [
+            'status' => [
+                'class' => Status_Diary::class,
+                'attribute' => 'status'
+            ]
+        ];
     }
 }

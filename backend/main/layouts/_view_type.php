@@ -1,8 +1,8 @@
 <?php
 
 use crudle\app\main\enums\Type_View;
-use yii\helpers\Html;
 use icms\FomanticUI\Elements;
+use yii\helpers\Html;
 
 ?>
 <!-- inverted brown -->

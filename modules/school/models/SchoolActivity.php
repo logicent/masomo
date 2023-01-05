@@ -4,6 +4,7 @@ namespace crudle\ext\school\models;
 
 use crudle\app\crud\enums\Type_Relation;
 use crudle\app\main\enums\Status_Active;
+use crudle\ext\school\enums\Status_Activity;
 use Yii;
 
 /**
@@ -20,7 +21,7 @@ use Yii;
  * @property string $updated_at
  * @property string $updated_by
  */
-class SchoolCalendar extends \crudle\app\crud\models\ActiveRecord
+class SchoolActivity extends \crudle\app\crud\models\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -71,7 +72,7 @@ class SchoolCalendar extends \crudle\app\crud\models\ActiveRecord
     {
         return [
             'status' => [
-                'class' => Status_Active::class,
+                'class' => Status_Activity::class,
                 'attribute' => 'status'
             ]
         ];

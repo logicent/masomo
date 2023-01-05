@@ -16,7 +16,8 @@ $hasFileInput = isset($model->uploadForm);
 $form = ActiveForm::begin([
     'id' => $model->formName(),
     // 'action' => $isReadonly ? false : Url::to([$this->context->action->id]),
-    'enableClientValidation' => false,
+    'enableClientValidation' => true,
+    // 'enableAjaxValidation' => false,
     'fieldConfig' => ['hintOptions' => $hintOptions],
     'options' => [
         'autocomplete' => 'off',

@@ -43,7 +43,7 @@ $showListCaptions = $searchModel->getLayoutSettings('showHelpInfo');
         // 'footerRowOptions' => [],
         // 'formatter' => null,
         // 'headerRowOptions' => [],
-        'layout' => "{summary}\n{items}\n{pager}\n{errors}", // {sorter}
+        'layout' => "{items}\n{pager}\n{errors}", // {summary}\n{sorter}
         // 'options' => ['class' => 'grid-view'],
         // 'placeFooterAfterBody' => false,
         // 'rowOptions' => function ( $model, $key, $index, $grid ) { return []; },

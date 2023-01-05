@@ -2,7 +2,7 @@
 
 namespace crudle\ext\school\models;
 
-use crudle\app\main\enums\Status_Active;
+use crudle\ext\school\enums\Status_Employee;
 use Yii;
 
 /**
@@ -29,7 +29,7 @@ class Teacher extends \crudle\app\crud\models\ActiveRecord
     public function init()
     {
         parent::init();
-        $this->listSettings->listNameAttribute = 'id';
+        $this->listSettings->listNameAttribute = 'teacher_name';
     }
 
     /**
@@ -87,8 +87,8 @@ class Teacher extends \crudle\app\crud\models\ActiveRecord
     {
         return [
             'status' => [
-                'class' => Status_Active::class,
-                'attribute' => 'inactive'
+                'class' => Status_Employee::class,
+                'attribute' => 'status'
             ]
         ];
     }

@@ -34,7 +34,7 @@ class Sponsor extends \crudle\app\crud\models\ActiveRecord
     public function init()
     {
         parent::init();
-        $this->listSettings->listNameAttribute = 'id';
+        $this->listSettings->listNameAttribute = 'title';
     }
 
     /**
@@ -51,13 +51,10 @@ class Sponsor extends \crudle\app\crud\models\ActiveRecord
     public function rules()
     {
         return array_merge(parent::rules(),
-            [
-            [['id', 'first_name', 'last_name'], 'required'],
-            [['comments', 'tags'], 'string'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['id', 'title', 'first_name', 'middle_name', 'last_name', 'ID_type', 'ID_no', 'mobile_phone_no', 'personal_email', 'status', 'created_by', 'updated_by'], 'string', 'max' => 140],
+        [
+            [['first_name', 'last_name'], 'required'],
+            [['title', 'first_name', 'middle_name', 'last_name', 'ID_type', 'ID_no', 'mobile_phone_no', 'personal_email', 'status'], 'string', 'max' => 140],
             [['sex'], 'string', 'max' => 1],
-            [['id'], 'unique'],
         ]
         );
     }
@@ -68,8 +65,8 @@ class Sponsor extends \crudle\app\crud\models\ActiveRecord
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('app', 'ID'),
-            'title' => Yii::t('app', 'Title'),
+            'id' => Yii::t('app', 'Sponsor ID'),
+            'title' => Yii::t('app', 'Name'),
             'first_name' => Yii::t('app', 'First Name'),
             'middle_name' => Yii::t('app', 'Middle Name'),
             'last_name' => Yii::t('app', 'Last Name'),
@@ -79,12 +76,6 @@ class Sponsor extends \crudle\app\crud\models\ActiveRecord
             'mobile_phone_no' => Yii::t('app', 'Mobile Phone No'),
             'personal_email' => Yii::t('app', 'Personal Email'),
             'status' => Yii::t('app', 'Status'),
-            'comments' => Yii::t('app', 'Comments'),
-            'tags' => Yii::t('app', 'Tags'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'created_by' => Yii::t('app', 'Created By'),
-            'updated_at' => Yii::t('app', 'Updated At'),
-            'updated_by' => Yii::t('app', 'Updated By'),
         ]);
     }
 

@@ -69,7 +69,8 @@ abstract class SettingsController extends FormController
 
     public function actionAddRow()
     {
-        if (Yii::$app->request->isAjax) // !! isAjax won't work in Htmx use isPost or check headers (HX-Request).
+        $headers = Yii::$app->request->headers;
+        if ($headers->has('HX-Request')) // !! Yii::$app->request->isAjax won't work in Htmx
         {
             $modelClass = Yii::$app->request->get('_model_class');
             $model = new $modelClass();
@@ -90,7 +91,8 @@ abstract class SettingsController extends FormController
 
     public function actionEditRow()
     {
-        if (Yii::$app->request->isAjax) // !! isAjax won't work in Htmx use isPost or check headers (HX-Request).
+        $headers = Yii::$app->request->headers;
+        if ($headers->has('HX-Request')) // !! Yii::$app->request->isAjax won't work in Htmx
         {
             $modelClass = Yii::$app->request->post('_model_class');
             $model = new $modelClass();

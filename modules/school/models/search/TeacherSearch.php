@@ -2,11 +2,11 @@
 
 namespace crudle\ext\school\models\search;
 
-use crudle\ext\school\models\Timetable;
+use crudle\ext\school\models\Teacher;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
-class TimetableSearch extends Timetable
+class TeacherSearch extends Teacher
 {
     /**
      * {@inheritdoc}
@@ -35,7 +35,7 @@ class TimetableSearch extends Timetable
      */
     public function search($params)
     {
-        $query = Timetable::find();
+        $query = Teacher::find();
 
         // add conditions that should always apply here
 
@@ -56,12 +56,9 @@ class TimetableSearch extends Timetable
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'status' => $this->status,
-            'school_calendar_period' => $this->school_calendar_period,
-            'school_id' => $this->school_id,
-            'school_level' => $this->school_level,
         ]);
 
-        $query->andFilterWhere(['like', 'description', $this->description])
+        $query->andFilterWhere(['like', 'teacher_name', $this->teacher_name])
             ->andFilterWhere(['like', 'created_by', $this->created_by])
             ->andFilterWhere(['like', 'updated_by', $this->updated_by]);
 

@@ -1,7 +1,7 @@
 <?php
 
-use crudle\app\assets\Dirrty;
-use crudle\app\helpers\StatusMarker;
+use crudle\app\main\assets\Dirrty;
+use crudle\app\crud\helpers\StatusMarker;
 use crudle\app\main\enums\Type_View;
 use yii\helpers\Html;
 

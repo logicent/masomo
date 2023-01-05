@@ -1,3 +1,7 @@
+<?php
+
+use crudle\ext\school\models\Student;
+?>
 <div class="ui padded segment">
     <div class="ui two column grid">
         <div class="column">
@@ -6,7 +10,9 @@
                 'attribute' => 'person_name',
                 'form' => $form,
                 'list' => [
-                    // 'modalClass' => 
+                    'modelClass' => Student::class,
+                    'keyAttribute' => 'id',
+                    'valueAttribute' => 'title'
                 ]
             ]) ?>
         </div>

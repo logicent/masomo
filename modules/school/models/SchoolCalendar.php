@@ -4,6 +4,7 @@ namespace crudle\ext\school\models;
 
 use crudle\app\crud\enums\Type_Relation;
 use crudle\app\main\enums\Status_Active;
+use crudle\ext\school\enums\Status_School_Period;
 use Yii;
 
 /**

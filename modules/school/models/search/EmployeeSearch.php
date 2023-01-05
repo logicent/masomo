@@ -2,11 +2,11 @@
 
 namespace crudle\ext\school\models\search;
 
-use crudle\ext\school\models\EventPlanner;
+use crudle\ext\school\models\Employee;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
-class EventPlannerSearch extends EventPlanner
+class EmployeeSearch extends Employee
 {
     /**
      * {@inheritdoc}
@@ -35,7 +35,7 @@ class EventPlannerSearch extends EventPlanner
      */
     public function search($params)
     {
-        $query = EventPlanner::find();
+        $query = Employee::find();
 
         // add conditions that should always apply here
 
@@ -56,12 +56,9 @@ class EventPlannerSearch extends EventPlanner
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'status' => $this->status,
-            'start_at' => $this->start_at,
-            'end_at' => $this->end_at,
         ]);
 
-        $query->andFilterWhere(['like', 'description', $this->description])
-            ->andFilterWhere(['like', 'created_by', $this->created_by])
+        $query->andFilterWhere(['like', 'created_by', $this->created_by])
             ->andFilterWhere(['like', 'updated_by', $this->updated_by]);
 
         return $dataProvider;

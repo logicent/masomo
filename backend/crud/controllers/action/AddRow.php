@@ -9,7 +9,8 @@ class AddRow extends Action
 {
     public function run()
     {
-        if (Yii::$app->request->isAjax) // !! isAjax won't work in Htmx use isPost or check headers (HX-Request).
+        $headers = Yii::$app->request->headers;
+        if ($headers->has('HX-Request')) // !! Yii::$app->request->isAjax won't work in Htmx
         {
             $modelClass = Yii::$app->request->get('_model_class');
             $model = new $modelClass();

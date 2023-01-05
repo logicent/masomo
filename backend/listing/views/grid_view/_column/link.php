@@ -25,10 +25,10 @@ return [
                                 'style' => 'font-weight: 500',
                                 'data' => [
                                     'pjax' => '0',
-                                    'hx-get' => Url::to($urlParams),
-                                    'hx-target' => 'body',
-                                    'hx-swap' => 'innerHtml',
-                                    'hx-push-url' => 'true',
+                                    // 'hx-get' => Url::to($urlParams),
+                                    // 'hx-target' => '#content',
+                                    // 'hx-swap' => 'innerHtml',
+                                    // 'hx-push-url' => 'true',
                                 ],
                             ]);
         return $linkColumn;

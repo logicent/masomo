@@ -2,6 +2,7 @@
 
 namespace crudle\ext\school\models;
 
+use crudle\ext\school\enums\Status_Event;
 use Yii;
 
 /**
@@ -20,7 +21,7 @@ use Yii;
  * @property string $updated_at
  * @property string $updated_by
  */
-class EventPlanner extends \crudle\app\crud\models\ActiveRecord
+class SchoolEvent extends \crudle\app\crud\models\ActiveRecord
 {
     /**
      * {@inheritdoc}

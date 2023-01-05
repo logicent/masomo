@@ -8,7 +8,8 @@ use crudle\ext\school\enums\Status_Announcement;
             <?= $this->render('@appMain/views/_form_field/textarea', [
                 'model' => $model,
                 'attribute' => 'description',
-                'form' => $form
+                'form' => $form,
+                'rows' => 5
             ]) ?>
         </div>
         <div class="column">
@@ -27,21 +28,23 @@ use crudle\ext\school\enums\Status_Announcement;
                 'model' => $model,
                 'attribute' => 'action_required',
                 'form' => $form,
-                'label' => '&nbsp;'
+                // 'label' => '&nbsp;'
             ]) ?>
         </div>
         <div class="column">
             <?= $this->render('@appMain/views/_form_field/textarea', [
                 'model' => $model,
                 'attribute' => 'target_audience',
-                'form' => $form
+                'form' => $form,
+                'rows' => 5
             ]) ?>
         </div>
         <div class="column">
             <?= $this->render('@appMain/views/_form_field/textarea', [
                 'model' => $model,
                 'attribute' => 'action_description',
-                'form' => $form
+                'form' => $form,
+                'rows' => 5
             ]) ?>
         </div>
     </div>

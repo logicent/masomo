@@ -25,11 +25,14 @@ $this->beginContent($layoutPath . 'base.php') ?>
         endif ?>
     </div>
 <?php
-    endif ?>
-    <div id="content" class="<?= LH::colWidth($controller) ?> wide column" style="padding-top: 0.25rem;">
+    endif ?><?php //= LH::colWidth($controller) ?>
+    <div id="content" class="ten wide column" style="padding-top: 0.25rem;">
         <?= $this->render($layoutPath . '_flash_message', ['context' => $controller]) ?>
         <!-- main view loads here -->
         <?= $content ?>
+    </div>
+    <div class="two wide column computer only large screen only">
+        <!-- form sidebar? -->
     </div>
 </div>
 <?php

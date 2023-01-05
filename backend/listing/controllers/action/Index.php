@@ -32,7 +32,7 @@ class Index extends Action
         $view = '@appModules/listing/views/grid_view/index'; // To-Do: make this dynamic
         $headers = Yii::$app->request->headers;
         if ($headers->has('HX-Request'))
-            return $this->controller->render($view, [
+            return $this->controller->renderAjax($view, [
                 'searchModel' => $searchModel,
                 'dataProvider' => $dataProvider,
             ]);

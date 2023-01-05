@@ -28,7 +28,7 @@ return [
         'visible' => Yii::$app->user->can(Type_Role::SystemManager),
     ],
     [
-        'route' => '/school/event-planner/index',
+        'route' => '/school/school-event/index',
         'label' => 'Event Planner',
         'icon' => 'calendar checked',
         'group' => Type_Menu_Sub_Group::Tools_Templates,

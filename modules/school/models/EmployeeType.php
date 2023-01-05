@@ -45,14 +45,9 @@ class EmployeeType extends \crudle\app\crud\models\ActiveRecord
     {
         return array_merge(parent::rules(),
             [
-            [['id'], 'required'],
             [['is_group'], 'integer'],
-            [['comments', 'tags'], 'string'],
-            [['created_at', 'updated_at'], 'safe'],
-            [['id', 'title', 'status', 'created_by', 'updated_by'], 'string', 'max' => 140],
-            [['id'], 'unique'],
-        ]
-        );
+            [['title', 'status'], 'string', 'max' => 140],
+        ]);
     }
 
     /**
@@ -65,12 +60,6 @@ class EmployeeType extends \crudle\app\crud\models\ActiveRecord
             'title' => Yii::t('app', 'Title'),
             'status' => Yii::t('app', 'Status'),
             'is_group' => Yii::t('app', 'Is Group'),
-            'comments' => Yii::t('app', 'Comments'),
-            'tags' => Yii::t('app', 'Tags'),
-            'created_at' => Yii::t('app', 'Created At'),
-            'updated_at' => Yii::t('app', 'Updated At'),
-            'created_by' => Yii::t('app', 'Created By'),
-            'updated_by' => Yii::t('app', 'Updated By'),
         ]);
     }
 
@@ -85,7 +74,7 @@ class EmployeeType extends \crudle\app\crud\models\ActiveRecord
         return [
             'status' => [
                 'class' => Status_Active::class,
-                'attribute' => 'inactive'
+                'attribute' => 'status'
             ]
         ];
     }

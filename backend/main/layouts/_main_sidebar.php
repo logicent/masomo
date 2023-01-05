@@ -1,7 +1,7 @@
 <?php
 
-use yii\helpers\Html;
 use icms\FomanticUI\Elements;
+use yii\helpers\Html;
 use yii\helpers\Url;
 
 $currentRoute = explode('/', Url::current());
@@ -30,12 +30,12 @@ endif;
                         ["/app/{$sidebarMenu['route']}"],
                         [
                                 'class' => $moduleSegment == $menuRoute[$menuIndex] ? 'item active' : 'item',
-                                'data' => [
-                                        'hx-get' => Url::to(["/app/{$sidebarMenu['route']}"]),
-                                        'hx-target' => 'body',
-                                        'hx-swap' => 'innerHtml',
-                                        'hx-push-url' => 'true',
-                                ],
+                                // 'data' => [
+                                //         'hx-get' => Url::to(["/app/{$sidebarMenu['route']}"]),
+                                //         'hx-target' => '#content',
+                                //         'hx-swap' => 'innerHtml',
+                                //         'hx-push-url' => 'true',
+                                // ],
                         ],
                 );
         endforeach ?>

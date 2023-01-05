@@ -29,12 +29,12 @@ $lastElement = $currentUrl[array_key_last($currentUrl)];
                         isset($menu['icon']) ? Elements::icon($menu['icon'], ['class' => 'grey']) .'&emsp;'. $label : $label,
                         Url::to([$menu['route']]), [
                             'class' => $lastElement == $currentMenu[array_key_last($currentMenu)-1] ? 'item active' : 'item',
-                            'data' => [
-                                'hx-get' => Url::to([$menu['route']]),
-                                'hx-target' => 'body',
-                                'hx-swap' => 'innerHtml',
-                                'hx-push-url' => 'true',
-                            ],
+                            // 'data' => [
+                            //     'hx-get' => Url::to([$menu['route']]),
+                            //     'hx-target' => '#content',
+                            //     'hx-swap' => 'innerHtml',
+                            //     'hx-push-url' => 'true',
+                            // ],
                             'style' => 'color: #6c7680;'
                         ]
                     ),

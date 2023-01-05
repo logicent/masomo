@@ -8,9 +8,12 @@ use yii\helpers\Url;
             'id' => 'create_btn',
             'class' => 'compact primary',
             'data' => [
-                'url' => Url::to(['create']),
+                'hx-get' => Url::to(['create']),
+                'hx-target' => '#content',
+                'hx-swap' => 'innerHtml',
+                'hx-push-url' => 'true',
                 // pre-select-modal options
                 // 'pre-select-modal' => $model->requirePreselectModal ? 'true' : 'false'
-            ]
+            ],
         ]);
 // endif;

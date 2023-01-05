@@ -275,7 +275,7 @@ abstract class CrudController extends GridViewController implements CrudInterfac
         ];
         $headers = Yii::$app->request->headers;
         if ($headers->has('HX-Request'))
-            return $this->render( $this->formView(), $data );
+            return $this->renderAjax( $this->formView(), $data );
         // else
         return $this->render( $this->formView(), $data );
     }
@@ -367,6 +367,14 @@ abstract class CrudController extends GridViewController implements CrudInterfac
             'index' => [
                 'route' => 'create',
                 'label' => 'New',
+                'options' => [
+                    // 'data' => [
+                    //     'hx-get' => Url::to(['create']),
+                    //     'hx-target' => '#content',
+                    //     'hx-swap' => 'innerHtml',
+                    //     'hx-push-url' => 'true',
+                    // ]
+                ]
             ],
             'create' => [
                 'route' => 'create',
