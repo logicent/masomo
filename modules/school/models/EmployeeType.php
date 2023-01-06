@@ -44,8 +44,8 @@ class EmployeeType extends \crudle\app\crud\models\ActiveRecord
     public function rules()
     {
         return array_merge(parent::rules(),
-            [
-            [['is_group'], 'integer'],
+        [
+            [['is_group'], 'boolean'],
             [['title', 'status'], 'string', 'max' => 140],
         ]);
     }
@@ -56,10 +56,10 @@ class EmployeeType extends \crudle\app\crud\models\ActiveRecord
     public function attributeLabels()
     {
         return array_merge(parent::attributeLabels(), [
-            'id' => Yii::t('app', 'ID'),
+            'id' => Yii::t('app', 'Type'),
             'title' => Yii::t('app', 'Title'),
-            'status' => Yii::t('app', 'Status'),
-            'is_group' => Yii::t('app', 'Is Group'),
+            'status' => Yii::t('app', 'Inactive'),
+            'is_group' => Yii::t('app', 'Is group'),
         ]);
     }
 
@@ -77,5 +77,10 @@ class EmployeeType extends \crudle\app\crud\models\ActiveRecord
                 'attribute' => 'status'
             ]
         ];
+    }
+
+    public static function autoSuggestIdValue()
+    {
+        return false;
     }
 }

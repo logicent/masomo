@@ -62,6 +62,7 @@ class CalendarPeriodType extends \crudle\app\crud\models\ActiveRecord
             'unit_measure' => Yii::t('app', 'Unit of measure'),
             'is_learning_period' => Yii::t('app', 'Is learning period'),
             'is_group' => Yii::t('app', 'Is group'),
+            'status' => Yii::t('app', 'Inactive'),
         ]);
     }
 

@@ -21,7 +21,10 @@ $this->beginContent($layoutPath . 'base.php') ?>
             echo $this->renderFile($controller->viewPath . '/_sidebar.php', ['context' => $controller]);
         else:
             $viewDir = Inflector::underscore(Inflector::id2camel($this->context->module->defaultRoute));
-            echo $this->render("@extModules/{$this->context->module->id}/views/{$viewDir}/_sidebar");
+            $viewFile = "@extModules/{$this->context->module->id}/views/{$viewDir}/_sidebar.php";
+            if (file_exists($viewFile)) :
+                echo $this->renderFile($viewFile);
+            endif;
         endif ?>
     </div>
 <?php
